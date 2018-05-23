@@ -1,6 +1,7 @@
 package me.ialistannen.livingparchment.common.serialization
 
 import me.ialistannen.livingparchment.common.model.Book
+import me.ialistannen.livingparchment.common.model.BookLocation
 import org.junit.Ignore
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow
@@ -41,6 +42,7 @@ internal class JsonTest {
                 pageCount = 20,
                 isbn = "123456789",
                 language = "english",
+                location = BookLocation("Test shelf", "N/A"),
                 published = Date(),
                 genre = listOf("Fantasy"),
                 extra = mutableMapOf("hey" to "2.0", "yea" to "ya")
