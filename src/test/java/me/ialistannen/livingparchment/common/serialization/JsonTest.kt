@@ -36,14 +36,14 @@ internal class JsonTest {
 
     private fun getBook(): Book {
         return Book(
-                "The mockingbird",
-                listOf("Cornelia Funke"),
-                20,
-                "123456789",
-                "english",
-                Date(),
-                listOf("Fantasy"),
-                mapOf("hey" to "2.0", "yea" to "ya")
+                title = "The mockingbird",
+                authors = listOf("Cornelia Funke"),
+                pageCount = 20,
+                isbn = "123456789",
+                language = "english",
+                published = Date(),
+                genre = listOf("Fantasy"),
+                extra = mutableMapOf("hey" to "2.0", "yea" to "ya")
         )
     }
 }

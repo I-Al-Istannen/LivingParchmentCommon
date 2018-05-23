@@ -33,3 +33,12 @@ inline fun <reified T> String.fromJson(): T {
 fun <T : Any?> T.toJson(): String? {
     return Json.gson.toJson(this)
 }
+
+/**
+ * Converts the object to json.
+ *
+ * @return the generated json element for the object.
+ */
+fun <T : Any?> T.toJsonTree(): JsonElement? {
+    return Json.gson.toJsonTree(this)
+}

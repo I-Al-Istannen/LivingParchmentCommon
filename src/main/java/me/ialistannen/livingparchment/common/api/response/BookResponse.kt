@@ -1,6 +1,7 @@
 package me.ialistannen.livingparchment.common.api.response
 
-import java.awt.print.Book
+import me.ialistannen.livingparchment.common.model.Book
+
 
 /**
  * A response with books from the server.
