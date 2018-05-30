@@ -1,6 +1,8 @@
 package me.ialistannen.livingparchment.common.api.response
 
-data class BookPatchResponse(val isbn: String, val status: BookPatchStatus)
+import me.ialistannen.livingparchment.common.model.Book
+
+data class BookPatchResponse(val isbn: String, val status: BookPatchStatus, val book: Book?)
 
 enum class BookPatchStatus {
     PATCHED,
