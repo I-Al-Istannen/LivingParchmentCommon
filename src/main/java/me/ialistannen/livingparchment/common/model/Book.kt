@@ -15,6 +15,7 @@ data class Book(
         val published: Date = Date(0),
         val publisher: String = "",
         val location: BookLocation? = null,
+        val imageUrl: String? = null,
         val extra: Map<String, Any> = mapOf()
 ) {
 
@@ -35,10 +36,11 @@ data class Book(
             authors: List<String>,
             publisher: String = "",
             location: BookLocation? = null,
+            imageUrl: String? = null,
             genre: List<String> = emptyList(),
             extra: Map<String, Any> = mutableMapOf()
     ) : this(
-            title, pageCount, isbn, language, published, publisher, location,
+            title, pageCount, isbn, language, published, publisher, location, imageUrl,
             extra.toMutableMap().apply {
                 put("authors", authors)
                 put("genre", genre)
