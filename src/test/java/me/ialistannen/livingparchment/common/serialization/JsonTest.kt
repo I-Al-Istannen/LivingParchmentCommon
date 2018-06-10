@@ -2,37 +2,25 @@ package me.ialistannen.livingparchment.common.serialization
 
 import me.ialistannen.livingparchment.common.model.Book
 import me.ialistannen.livingparchment.common.model.BookLocation
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import java.util.*
 import kotlin.test.assertEquals
-import kotlin.test.assertNotEquals
 
 internal class JsonTest {
 
     @Test
-    fun `serialization throws no error`() {
+    fun `serializing book throws no error`() {
         assertDoesNotThrow { getBook().toJson() }
     }
 
     @Test
-    fun `round-trip works`() {
+    fun `book round-trip works`() {
         val original = getBook()
         val json = original.toJson()!!
 
         val fromJson = json.fromJson<Book>()
         assertEquals(original, fromJson)
-    }
-
-    @Test
-    @Ignore
-    fun `round-trip fails for integers`() {
-        val original = getBook().copy(extra = mapOf("hm" to "2"))
-        val json = original.toJson()!!
-
-        val fromJson = json.fromJson<Book>()
-        assertNotEquals(original, fromJson)
     }
 
     private fun getBook(): Book {
@@ -47,5 +35,23 @@ internal class JsonTest {
                 genre = listOf("Fantasy"),
                 extra = mutableMapOf("hey" to "2.0", "yea" to "ya")
         )
+    }
+
+    @Test
+    fun `serializing book location throws no error`() {
+        assertDoesNotThrow { getBookLocation().toJson() }
+    }
+
+    @Test
+    fun `book location round-trip works`() {
+        val original = getBookLocation()
+        val json = original.toJson()!!
+
+        val fromJson = json.fromJson<BookLocation>()
+        assertEquals(original, fromJson)
+    }
+
+    private fun getBookLocation(): BookLocation {
+        return BookLocation("Name", "A location")
     }
 }
